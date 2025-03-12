@@ -16,6 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Инициализация презентации
     initPresentation();
+    
+    // Проверка загрузки изображения для последнего слайда
+    const floatingRobot = document.querySelector('.floating-robot');
+    if (floatingRobot) {
+        floatingRobot.onerror = function() {
+            console.error('Ошибка загрузки изображения робота');
+            // Заменяем на альтернативное изображение, если основное не загрузилось
+            this.src = 'https://cdn-icons-png.flaticon.com/512/4616/4616734.png';
+        };
+    }
 });
 
 // Применение цветов темы Telegram
