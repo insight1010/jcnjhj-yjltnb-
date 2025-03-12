@@ -151,6 +151,7 @@ p {
     padding: 5px;
     margin-bottom: 3px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .comparison-item h3 {
@@ -158,11 +159,50 @@ p {
     margin-bottom: 2px;
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
 
 .comparison-item p {
     font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.9);
+}
+
+.comparison-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Стили для иконок с текстом поверх */
+.icon-with-label {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.icon-with-label img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.icon-with-label .icon-label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 /* Анимации для Telegram Mini App */
@@ -345,10 +385,40 @@ p {
     max-width: 280px;
 }
 
+.comparison .icon-with-label {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.comparison .icon-with-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comparison .icon-label {
+    top: 15px;
+    font-size: 1.1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 3px 0;
+    width: 100%;
+}
+
+.comparison p {
+    text-align: center;
+    margin: 0 0 10px;
+    font-size: 0.75rem;
+    padding: 0 5px;
+}
+
 .vs {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin: 0;
+    margin: 5px 0;
 }
 
 .highlight-box {
