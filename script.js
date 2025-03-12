@@ -1,6 +1,6 @@
 // Переменные для управления слайдами
 let currentSlide = 1;
-const totalSlides = 9;
+const totalSlides = 10;
 
 // Инициализация Telegram WebApp
 let tg = window.Telegram.WebApp;
@@ -40,71 +40,67 @@ function applyTelegramTheme() {
     }
 }
 
+// Функция для перехода к определенному слайду
+function goToSlide(slideNumber) {
+    // Скрываем все слайды
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach(slide => {
+        slide.style.display = 'none';
+    });
+    
+    // Показываем нужный слайд
+    document.getElementById(`slide${slideNumber}`).style.display = 'flex';
+    
+    // Обновляем активную точку навигации
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        if (index + 1 === slideNumber) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+    
+    // Обновляем текущий слайд
+    currentSlide = slideNumber;
+    
+    // Вибрация при переключении слайдов (если поддерживается)
+    if ('vibrate' in navigator) {
+        navigator.vibrate(30);
+    }
+    
+    // Обновляем MainButton Telegram
+    tg.MainButton.text = `Слайд ${currentSlide} из ${totalSlides}`;
+    if (currentSlide === totalSlides) {
+        tg.MainButton.text = "Завершить презентацию";
+        tg.MainButton.show();
+    } else if (currentSlide === 1) {
+        tg.MainButton.hide();
+    } else {
+        tg.MainButton.show();
+    }
+}
+
 // Инициализация презентации
 function initPresentation() {
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let currentSlide = 0;
-    
-    // Обновление состояния кнопок
-    function updateButtons() {
-        prevBtn.disabled = currentSlide === 0;
-        nextBtn.disabled = currentSlide === slides.length - 1;
-        
-        // Вибрация при переключении слайдов (если поддерживается)
-        if ('vibrate' in navigator) {
-            navigator.vibrate(30);
-        }
-        
-        // Отправка данных в Telegram о текущем слайде
-        tg.MainButton.text = `Слайд ${currentSlide + 1} из ${slides.length}`;
-        if (currentSlide === slides.length - 1) {
-            tg.MainButton.text = "Завершить презентацию";
-            tg.MainButton.show();
-        } else if (currentSlide === 0) {
-            tg.MainButton.hide();
-        } else {
-            tg.MainButton.show();
-        }
-    }
-    
-    // Показать слайд
-    function showSlide(index) {
-        slides.forEach(slide => slide.style.display = 'none');
-        slides[index].style.display = 'flex';
-        currentSlide = index;
-        updateButtons();
-    }
-    
-    // Обработчики событий для кнопок
-    prevBtn.addEventListener('click', function() {
-        if (currentSlide > 0) {
-            showSlide(currentSlide - 1);
-        }
-    });
-    
-    nextBtn.addEventListener('click', function() {
-        if (currentSlide < slides.length - 1) {
-            showSlide(currentSlide + 1);
-        }
-    });
-    
-    // Обработчик для главной кнопки Telegram
+    // Инициализация Telegram MainButton
+    tg.MainButton.text = `Слайд 1 из ${totalSlides}`;
     tg.MainButton.onClick(function() {
-        if (currentSlide === slides.length - 1) {
+        if (currentSlide === totalSlides) {
             // Завершение презентации
             tg.close();
         } else {
             // Переход к следующему слайду
-            if (currentSlide < slides.length - 1) {
-                showSlide(currentSlide + 1);
+            if (currentSlide < totalSlides) {
+                goToSlide(currentSlide + 1);
             }
         }
     });
     
-    // Инициализация первого слайда
-    showSlide(0);
+    // Показываем первый слайд при инициализации
+    if (currentSlide !== 1) {
+        goToSlide(1);
+    }
     
     // Добавление поддержки свайпов для мобильных устройств
     let touchStartX = 0;
@@ -123,14 +119,14 @@ function initPresentation() {
         const swipeThreshold = 50;
         if (touchEndX < touchStartX - swipeThreshold) {
             // Свайп влево - следующий слайд
-            if (currentSlide < slides.length - 1) {
-                showSlide(currentSlide + 1);
+            if (currentSlide < totalSlides) {
+                goToSlide(currentSlide + 1);
             }
         }
         if (touchEndX > touchStartX + swipeThreshold) {
             // Свайп вправо - предыдущий слайд
-            if (currentSlide > 0) {
-                showSlide(currentSlide - 1);
+            if (currentSlide > 1) {
+                goToSlide(currentSlide - 1);
             }
         }
     }
@@ -152,33 +148,26 @@ function prevSlide() {
 
 // Добавляем обработчик клавиш для навигации
 document.addEventListener('keydown', function(e) {
-    // Обработка нажатий клавиш только если презентация инициализирована
-    if (typeof currentSlide !== 'undefined') {
-        switch(e.key) {
-            case 'ArrowRight':
-            case 'ArrowDown':
-            case ' ':
-                // Следующий слайд
-                if (currentSlide < slides.length - 1) {
-                    showSlide(currentSlide + 1);
-                }
-                break;
-            case 'ArrowLeft':
-            case 'ArrowUp':
-                // Предыдущий слайд
-                if (currentSlide > 0) {
-                    showSlide(currentSlide - 1);
-                }
-                break;
-            case 'Home':
-                // Первый слайд
-                showSlide(0);
-                break;
-            case 'End':
-                // Последний слайд
-                showSlide(slides.length - 1);
-                break;
-        }
+    switch(e.key) {
+        case 'ArrowRight':
+        case 'ArrowDown':
+        case ' ':
+            // Следующий слайд
+            nextSlide();
+            break;
+        case 'ArrowLeft':
+        case 'ArrowUp':
+            // Предыдущий слайд
+            prevSlide();
+            break;
+        case 'Home':
+            // Первый слайд
+            goToSlide(1);
+            break;
+        case 'End':
+            // Последний слайд
+            goToSlide(totalSlides);
+            break;
     }
 });
 
