@@ -1,0 +1,690 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.presentation {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Стили для слайдов */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    overflow-y: auto;
+}
+
+.slide:first-child {
+    display: flex;
+}
+
+.slide-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Заголовки */
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Слайд 1: Введение */
+.illustration {
+    width: 180px;
+    height: 180px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Специальные стили для изображения на первом слайде */
+#slide1 .illustration {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+#slide1 .illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px rgba(0, 255, 170, 0.5));
+    }
+    100% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 15px rgba(0, 255, 170, 0.8));
+    }
+}
+
+/* Для остальных слайдов оставляем без поворота */
+#slide2 .illustration {
+    width: 180px;
+    height: 180px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#slide2 .illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: rotate(-90deg);
+}
+
+#slide3 .illustration img, 
+#slide4 .illustration img, 
+#slide5 .illustration img, 
+#slide6 .illustration img, 
+#slide7 .illustration img, 
+#slide8 .illustration img, 
+#slide9 .illustration img {
+    transform: rotate(0deg);
+}
+
+/* Слайд 2: Проблема и решение */
+.card {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.problem {
+    border-left: 5px solid #ff6b6b;
+}
+
+.solution {
+    border-left: 5px solid #51cf66;
+}
+
+.goal {
+    border-left: 5px solid #339af0;
+}
+
+/* Слайд 3: Что такое эксперимент */
+.feature-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.feature {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* Слайд 4: Как это работает */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.step {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 15px;
+    position: relative;
+    padding-left: 60px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    color: #6e8efb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Слайд 5: Пример с ИИ */
+.comparison {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.comparison-item {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.vs {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.highlight-box {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.highlight-box p {
+    margin-bottom: 10px;
+}
+
+.highlight-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Слайд 6: Безопасность */
+.safety-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.safety-feature {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.safety-feature img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* Слайд 7: Что получит ребенок и мама */
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.benefit-group {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-group h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.benefit-group ul {
+    padding-left: 20px;
+}
+
+.benefit-group li {
+    margin-bottom: 8px;
+}
+
+.child {
+    border-left: 5px solid #74c0fc;
+}
+
+.mother {
+    border-left: 5px solid #f783ac;
+}
+
+/* Слайд 8: Как присоединиться */
+.join-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.join-item {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.join-item h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.requirements {
+    margin-top: 15px;
+}
+
+.requirements ul {
+    padding-left: 20px;
+}
+
+.requirements li {
+    margin-bottom: 8px;
+}
+
+.join-action {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.meeting-date {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.cta-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #fa5252;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    color: white;
+    text-decoration: none;
+}
+
+.faq-note {
+    font-style: italic;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* Навигация */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-btn {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.nav-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (min-width: 768px) {
+    .slide-content {
+        padding: 30px;
+        max-width: 700px;
+    }
+
+    .comparison {
+        flex-direction: row;
+        max-width: 700px;
+    }
+
+    .comparison-item {
+        width: 45%;
+    }
+
+    .feature-box, .steps, .safety-features, .benefits, .join-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 700px;
+    }
+
+    .feature, .safety-feature {
+        width: calc(33.33% - 14px);
+    }
+
+    .step {
+        width: calc(33.33% - 14px);
+    }
+
+    .benefit-group, .join-item, .join-action {
+        width: calc(50% - 10px);
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Общие стили для tagline */
+.tagline {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.tagline-second {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+/* Стили для слайда с объяснением ИИ */
+.ai-explanation {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 90%;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ai-explanation p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.ai-explanation p:last-child {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Стили для волшебной палочки */
+.magic-wand {
+    width: 80px;
+    height: 80px;
+    margin: 15px auto;
+    animation: sparkle 2s infinite alternate;
+}
+
+.magic-wand img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: rotate(-5deg) scale(1);
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+    }
+    100% {
+        transform: rotate(5deg) scale(1.1);
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+    }
+}
+
+/* Стили для рекомендации родителям */
+.parent-tip {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 20px auto 0;
+    text-align: center;
+    width: 80%;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+}
+
+.robot-message {
+    background-color: rgba(0, 162, 255, 0.2);
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin: 15px auto;
+    max-width: 80%;
+    border-left: 3px solid #00a2ff;
+    position: relative;
+}
+
+.robot-message p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin: 0;
+    font-style: italic;
+    text-align: center;
+}
+
+.robot-message::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 162, 255, 0.2) transparent;
+}
+
+/* Специальные стили для изображения робота на последнем слайде */
+.large-robot {
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.large-robot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.future-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.message-box {
+    background-color: rgba(0, 162, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    border-left: 3px solid #00a2ff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.message-box p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Стили для главного робота на первом слайде */
+.main-robot {
+    width: 280px;
+    height: auto;
+    margin: 20px auto;
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px rgba(0, 255, 170, 0.5));
+    }
+    100% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 15px rgba(0, 255, 170, 0.8));
+    }
+} 
