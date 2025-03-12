@@ -102,34 +102,10 @@ function initPresentation() {
         goToSlide(1);
     }
     
-    // Добавление поддержки свайпов для мобильных устройств
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    document.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    }, false);
-    
-    document.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, false);
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-            // Свайп влево - следующий слайд
-            if (currentSlide < totalSlides) {
-                goToSlide(currentSlide + 1);
-            }
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-            // Свайп вправо - предыдущий слайд
-            if (currentSlide > 1) {
-                goToSlide(currentSlide - 1);
-            }
-        }
-    }
+    // Отключаем свайпы для предотвращения скроллов
+    document.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+    }, { passive: false });
 }
 
 // Функция для перехода к следующему слайду
