@@ -565,9 +565,7 @@ p {
 }
 
 .faq-note {
-    font-style: italic;
-    margin-top: 5px;
-    font-size: 0.65rem;
+    display: none !important;
 }
 
 /* Навигация */
