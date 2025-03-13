@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="MobileOptimized" content="176">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Социальный эксперимент для детей</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="presentation">
+        <!-- Слайд 1: Введение -->
+        <section class="slide" id="slide1">
+            <div class="slide-content">
+                <h1>Социальный эксперимент с ИИ</h1>
+                <h2>Ваш ребенок учится создавать свой мир</h2>
+                <img src="cute_robot_assistant.png" alt="ИИ-робот помощник" class="main-robot">
+                <p class="tagline">Развиваем социальные навыки</p>
+                <p class="tagline-second">через игру и технологии</p>
+                <button class="start-button" onclick="nextSlide()">Старт</button>
+            </div>
+            <div class="nav-dots">
+                <span class="dot active" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <!-- Удаляем кнопку "Далее" из нижней навигации, так как теперь у нас есть кнопка "Старт" -->
+            </div>
+        </section>
+
+        <!-- Слайд 2: Что такое ИИ для детей -->
+        <section class="slide" id="slide2">
+            <div class="slide-content">
+                <h2>Что такое ИИ?</h2>
+                <div class="illustration">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4616/4616734.png" alt="ИИ-робот помощник">
+                </div>
+                <div class="ai-explanation">
+                    <p>ИИ — это инструмент с помощью которого можно создавать и управлять игровым и реальным миром</p>
+                    <div class="magic-wand">
+                        <img src="https://cdn-icons-png.flaticon.com/512/867/867891.png" alt="Волшебная палочка">
+                    </div>
+                    <p>Как волшебный помощник, который помогает тебе строить и менять твой собственный мир!</p>
+                </div>
+                <p class="parent-tip">Спросите у ребенка, если он понял что такое ИИ, то он поймет как создать огромный мир связей</p>
+            </div>
+            <div class="nav-dots">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot active" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <button class="nav-btn prev" onclick="prevSlide()" id="prevBtn">Назад</button>
+                <button class="nav-btn next" onclick="nextSlide()" id="nextBtn">Далее</button>
+            </div>
+        </section>
+
+        <!-- Слайд 3: Проблема и решение -->
+        <section class="slide" id="slide3">
+            <div class="slide-content">
+                <h2>Почему это важно?</h2>
+                <div class="card problem">
+                    <h3>Проблема</h3>
+                    <p>Дети растут с ощущением что гаджет это плохо, роблокс нельзя. Это похоже на то когда поколение вырасло с установкой что деньги это зло</p>
+                </div>
+                <div class="card solution">
+                    <h3>Решение</h3>
+                    <p>Уникальный эксперимент, где технологии помогают развивать социальные навыки</p>
+                </div>
+                <div class="card goal">
+                    <h3>Цель</h3>
+                    <p>Вырастить уверенных, коммуникабельных детей, готовых к будущему</p>
+                </div>
+            </div>
+            <div class="nav-dots">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot active" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <button class="nav-btn prev" onclick="prevSlide()" id="prevBtn">Назад</button>
+                <button class="nav-btn next" onclick="nextSlide()" id="nextBtn">Далее</button>
+            </div>
+        </section>
+
+        <!-- Слайд 4: Что такое эксперимент -->
+        <section class="slide" id="slide4">
+            <div class="slide-content">
+                <h2>Что такое наш эксперимент?</h2>
+                <div class="feature-box">
+                    <div class="feature">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3227/3227053.png" alt="Игровые миры">
+                        <h3>Игровые миры</h3>
+                        <p>Дети создают свои миры и взаимодействуют с другими</p>
+                    </div>
+                    <div class="feature">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3094/3094934.png" alt="Безопасное пространство">
+                        <h3>Безопасное пространство</h3>
+                        <p>Контролируемая среда, где ребенок главный</p>
+                    </div>
+                    <div class="feature">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="ИИ-помощник">
+                        <h3>ИИ-помощник</h3>
+                        <p>Личный ИИ становится частью "внешней памяти"</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot active" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <button class="nav-btn prev" onclick="prevSlide()" id="prevBtn">Назад</button>
+                <button class="nav-btn next" onclick="nextSlide()" id="nextBtn">Далее</button>
+            </div>
+        </section>
+
+        <!-- Слайд 5: Как это работает -->
+        <section class="slide" id="slide5">
+            <div class="slide-content">
+                <h2>Как это работает?</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Создание мира</h3>
+                        <p>Ребенок строит свой игровой мир, устанавливает правила</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Социальное взаимодействие</h3>
+                        <p>Дети учатся работать в команде, решать конфликты</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Развитие ИИ-помощника</h3>
+                        <p>ИИ помогает запоминать информацию и давать советы</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot active" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <button class="nav-btn prev" onclick="prevSlide()" id="prevBtn">Назад</button>
+                <button class="nav-btn next" onclick="nextSlide()" id="nextBtn">Далее</button>
+            </div>
+        </section>
+
+        <!-- Слайд 6: Пример с ИИ -->
+        <section class="slide" id="slide6">
+            <div class="slide-content">
+                <h2>Как ИИ-помощник меняет жизнь?</h2>
+                <div class="comparison">
+                    <div class="icon-with-label">
+                        <div class="icon-label">В игре</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/3048/3048122.png" alt="В игре">
+                    </div>
+                    <p>Как предприниматель с айфоном и сообществом Терра в 2005 году на рынке Черкизовский</p>
+                    <div class="vs">VS</div>
+                    <div class="icon-with-label">
+                        <div class="icon-label">Без игры</div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/2830/2830312.png" alt="Без игры">
+                    </div>
+                    <p>Как владелец который работает продавцом в своем магазине вместо CRM тетрадь с ручкой</p>
+                </div>
+                <div class="highlight-box">
+                    <p>Через 10 лет разница будет x10000%</p>
+                    <p>Дети, освоившие ИИ сейчас, станут <strong>супер-людьми</strong></p>
+                </div>
+            </div>
+            <div class="nav-dots">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot active" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <button class="nav-btn prev" onclick="prevSlide()" id="prevBtn">Назад</button>
+                <button class="nav-btn next" onclick="nextSlide()" id="nextBtn">Далее</button>
+            </div>
+        </section>
+
+        <!-- Слайд 7: Безопасность -->
+        <section class="slide" id="slide7">
+            <div class="slide-content">
+                <h2>Почему это безопасно?</h2>
+                <div class="safety-features">
+                    <div class="safety-feature">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2519/2519296.png" alt="Контроль">
+                        <h3>Контроль</h3>
+                        <p>Все действия контролируются советом мам и алгоритмами</p>
+                    </div>
+                    <div class="safety-feature">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4727/4727266.png" alt="Развитие">
+                        <h3>Развитие</h3>
+                        <p>ИИ дополняет реальное общение, а не заменяет его</p>
+                    </div>
+                    <div class="safety-feature">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910756.png" alt="Этика">
+                        <h3>Этика</h3>
+                        <p>Защита данных и конфиденциальность — ваш приоритет</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot active" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <button class="nav-btn prev" onclick="prevSlide()" id="prevBtn">Назад</button>
+                <button class="nav-btn next" onclick="nextSlide()" id="nextBtn">Далее</button>
+            </div>
+        </section>
+
+        <!-- Слайд 8: Что получит ребенок и мама -->
+        <section class="slide" id="slide8">
+            <div class="slide-content">
+                <h2>Что получат ваш ребенок и вы?</h2>
+                <div class="benefits">
+                    <div class="benefit-group child">
+                        <h3>Ребенок получит:</h3>
+                        <ul>
+                            <li>Социальные навыки и креативность</li>
+                            <li>Лидерские качества</li>
+                            <li>Умение работать с технологиями</li>
+                            <li>ИИ-помощника как "внешнюю память"</li>
+                            <li>Уверенность в себе</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-group mother">
+                        <h3>Мама получит:</h3>
+                        <ul>
+                            <li>Равновесие с миром в зоне стресса</li>
+                            <li>Осмысленность своей роли как матери</li>
+                            <li>Гармонию между материнством и личной жизнью</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot active" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <button class="nav-btn prev" onclick="prevSlide()" id="prevBtn">Назад</button>
+                <button class="nav-btn next" onclick="nextSlide()" id="nextBtn">Далее</button>
+            </div>
+        </section>
+
+        <!-- Слайд 9: Как присоединиться -->
+        <section class="slide" id="slide9">
+            <div class="slide-content">
+                <h2>Как присоединиться?</h2>
+                <div class="join-info">
+                    <div class="join-item">
+                        <h3>Только для первых 50-100 детей</h3>
+                        <div class="requirements">
+                            <p><strong>Требования:</strong></p>
+                            <ul>
+                                <li>Возраст: 7-12 лет</li>
+                                <li>Интерес к играм и технологиям</li>
+                                <li>Поддержка родителей</li>
+                                <li>Компьютер или планшет с интернетом</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="join-action">
+                        <p class="meeting-date">Встреча: 17.03</p>
+                        <a href="https://t.me/andrey_manaenko" class="cta-button">Записаться</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot active" onclick="goToSlide(9)"></span>
+                <span class="dot" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <button class="nav-btn prev" onclick="prevSlide()" id="prevBtn">Назад</button>
+                <button class="nav-btn restart" onclick="goToSlide(1)" id="restartBtn">В начало</button>
+            </div>
+        </section>
+
+        <!-- Слайд 10: Сообщение из будущего -->
+        <section class="slide" id="slide10">
+            <div class="slide-content">
+                <h2>Сообщение из будущего</h2>
+                <div class="future-message">
+                    <img src="floating_robot.png" alt="Робот из будущего" class="floating-robot" onerror="this.src='https://png.pngtree.com/png-clipart/20230429/original/pngtree-robot-artificial-intelligence-technology-transparent-png-image_9123453.png'">
+                    <div class="message-box">
+                        <p>я тебя люблю )</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-dots">
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+                <span class="dot" onclick="goToSlide(7)"></span>
+                <span class="dot" onclick="goToSlide(8)"></span>
+                <span class="dot" onclick="goToSlide(9)"></span>
+                <span class="dot active" onclick="goToSlide(10)"></span>
+            </div>
+            <div class="navigation">
+                <button class="nav-btn prev" onclick="prevSlide()" id="prevBtn">Назад</button>
+                <button class="nav-btn restart" onclick="goToSlide(1)" id="restartBtn">В начало</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
